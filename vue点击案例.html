@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!--开发版-->
+
+
+    <title>vuejs</title>
+</head>
+<body>
+
+    <div id="app">
+        <h2>当前数字: {{cnt}}</h2>
+        <button v-on:click="addOne">+1</button>
+        <button @click="subOne">-1</button>
+        <button @click="setZero">clear</button>
+    </div>
+    
+
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data:{
+                message:"hello vuejs!",
+                cnt:0
+            },
+            methods:{
+                addOne:function(){
+                    
+                    if(this.cnt>=10)return
+                    this.cnt++
+                },
+                subOne:function(){
+                    if(this.cnt<=0)return
+                    this.cnt--
+
+                },
+                setZero:function(){
+                    this.cnt = 0
+                }
+            }
+
+
+        })
+
+       
+
+
+    </script>
+</body>
+</html>

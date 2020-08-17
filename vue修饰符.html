@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!--开发版-->
+
+
+  <title>vuejs学习</title>
+</head>
+
+<body>
+  <div id="app">
+    <form action="baidu">
+      <input type="submit" @click.prevent="submitClick">
+    </form>
+
+    <div @click="divClick" style="margin: 30px; border: 1px solid black;">
+      div内容
+      <button @click.stop="btnClick">按钮</button>
+    </div>
+
+    <input type="text" @keydown.enter="inputEnter" v-model = "inputValue">
+
+
+  </div>
+
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "hello vuejs!",
+        inputValue:""
+      },
+      methods: {
+        submitClick() {
+          console.log('提交按钮');
+        },
+        divClick(){
+          console.log("divClick");
+        },
+        btnClick(){
+          console.log("btnClick");
+        },
+        inputEnter(){
+          console.log(this.inputValue);
+        }
+
+
+      }
+    })
+  </script>
+</body>
+
+</html>

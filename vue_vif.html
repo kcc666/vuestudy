@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!--开发版-->
+
+
+  <title>vuejs学习</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <span v-if="userShow">
+      <span>用户登录</span><input type="text" placeholder="请输入用户账号">
+    </span>
+
+    <span v-if="emailShow">
+      <span>邮箱登录</span><input type="text" placeholder="邮箱登录">
+    </span>
+
+    <button @click="changeClick">切换登录类型</button>
+
+  </div>
+
+
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "hello vuejs!",
+        userShow: true,
+        emailShow: false,
+      },
+      methods: {
+        changeClick() {
+          this.userShow = !this.userShow
+          this.emailShow = !this.emailShow
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

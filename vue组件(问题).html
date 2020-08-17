@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!--开发版-->
+
+
+  <title>vuejs学习</title>
+</head>
+
+<body>
+  <!-- ---------------总结------------- -->
+  <!-- 1.写template标签内容,并为其赋ID值 -->
+  <!-- 2.写模板的对象 -->
+  <!-- 3.注册组件 -->
+  <!-- 4.为模板绑定值 -->
+  <!-- 5.使用在模板中传的值 -->
+  <!-- ---------------总结完毕--------- -->
+
+
+  <!-- 第一步,写模板 -->
+  <template id="cpn">
+    <div>
+      <h1>{{msg}}</h1><!--第五步-->
+    </div>
+  </template>
+
+
+  <div id="app">
+    <h1>{{rootMsg}}</h1>
+    <cpn :msg="message"></cpn><!--第四步-->
+  </div>
+
+
+  <script>
+    // 第二步,写模板对象
+    const cpn = {
+      template: "#cpn",
+      props: {
+        msg: {
+          type: String,
+          default () { return "未传值" }
+        }
+      }
+    }
+
+
+
+    const app = new Vue({
+      el: "#app",
+      data: {
+        message: "this is child msg",
+        rootMsg: "this is root msg"
+      },
+      methods: {
+
+      },
+
+      //第三步,注册组件
+      components: {
+        cpn
+      }
+
+    })
+  </script>
+</body>
+
+</html>

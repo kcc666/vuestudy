@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!--开发版-->
+
+    <style>
+        .red{
+            color:blue;
+        }
+
+        li:first-child{
+            background:white
+        }
+
+        li{
+            cursor: pointer;
+            height: 30px;
+            line-height: 30px;
+        }
+
+    </style>
+
+    <title>vuejs学习</title>
+</head>
+<body>
+
+    <div id="app">
+        <ul>
+            <li v-for="(v,i) in arr" v-on:click="setClass(i)" >{{v}}</li>
+        </ul>
+    </div>
+    
+
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data:{
+                arr:["张三","李四","哆啦A梦","孙悟空","你好"]
+            },
+            methods:{
+                setClass:function(i){
+                    // this.style.color="red"
+                    // this.$el.style=color = "red"
+                    // console.log(i)
+                    els = document.getElementsByTagName("li")
+                    for (let j = 0; j < els.length; j++) {
+                        const element = els[j];
+                        if (j==i){element.style.background = "blue"}
+                        else{element.style.background = "white"}
+                    }
+
+                    
+                    
+
+                }
+            }
+        })
+
+       
+
+
+    </script>
+</body>
+</html>

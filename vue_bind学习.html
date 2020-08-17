@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--开发版-->
+
+
+    <title>vuejs学习</title>
+
+    <style>
+        img {
+            width: 700px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <img :src="imgurl" @click="stop">
+        <p>{{imgtext}}</p>
+    </div>
+
+
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: "hello vuejs!",
+                imglist: ["imgs/周一.png", "imgs/周二.png", "imgs/周三.png", "imgs/周四.png", "imgs/周五.png", "imgs/周六.jpg", "imgs/周日.png"],
+                imgurl:"",
+                imgtext:"",
+                timer:0,
+
+            },
+
+            methods:{
+                
+
+                stop:function(){
+                    
+                    clearInterval(this.timer)
+                }
+            },
+
+
+            created:function(){
+                let imgIndex = 0
+                _this = this
+                _this.imgurl = _this.imglist[imgIndex]
+                _this.imgtext = _this.imglist[imgIndex]
+
+
+                _this.timer = setInterval(function(){
+                    _this.imgurl = _this.imglist[imgIndex]
+                    _this.imgtext = _this.imglist[imgIndex]
+                    imgIndex++
+                    if(imgIndex>=_this.imglist.length){imgIndex=0}
+
+                },1000)
+
+
+            }
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

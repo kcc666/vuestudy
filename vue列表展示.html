@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!--开发版-->
+
+
+  <title>vuejs学习</title>
+</head>
+
+<body>
+
+  <div id="app">
+
+    <ul>
+      <li v-for="(item,index) in message">
+        {{index+1}} {{item}}
+      </li>
+    </ul>
+
+  </div>
+
+
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        title: "vue列表展示",
+        message: ["hello", "kcc", "and", "xcx"]
+      },
+      methods: {
+        
+      }
+    })
+
+
+    arr = [1,2,3]
+    
+  </script>
+</body>
+
+</html>

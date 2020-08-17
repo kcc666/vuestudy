@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--开发版-->
+
+
+    <title>vue的生命周期</title>
+</head>
+
+<body>
+
+    <div id="app">{{message}}</div>
+
+
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                message: "vue的生命周期"
+            },
+
+
+            beforeCreate: function () {
+                console.log("beforeCreate")
+            },
+
+            created: function () {
+                console.log("created")
+            },
+            mounted: function () {
+                console.log("mounted")
+            },
+
+            beforeMount: function () {
+                console.log("beforeMount")
+            }
+
+
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

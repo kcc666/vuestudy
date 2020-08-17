@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <!--开发版-->
+
+
+  <title>vuejs学习</title>
+</head>
+
+<body>
+
+  <h1>高阶函数</h1>
+
+
+  <script>
+    let booklist = [
+      { name: "算法导论", date: "2006-9", price: 85, buyNum: 1, id: 1 },
+      { name: "UNIX编程艺术", date: "2006-2", price: 59, buyNum: 1, id: 2 },
+      { name: "编程珠玑", date: "2008-10", price: 39, buyNum: 1, id: 3 },
+      { name: "代码大全", date: "2006-3", price: 128, buyNum: 1, id: 4 },
+    ];
+
+    let arr = [10, 30, 60, 90, 500, 600, 800, 769]
+
+    //for of 遍历方法
+    for (const item of booklist) {
+      console.log(item.id, item.name, item.date, item.price, item.buyNum);
+    }
+
+    //数组filter方法
+    let filterArr = arr.filter(function (n) {
+      return n < 100
+    })
+    console.log(filterArr);
+
+    //数组map方法
+    let mapArr = arr.map(n=>n*5)
+    console.log(mapArr);
+
+    //数组reduce方法
+
+
+
+  </script>
+</body>
+
+</html>
